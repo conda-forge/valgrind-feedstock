@@ -10,9 +10,9 @@ export CXXFLAGS="$(echo "${CXXFLAGS}" | sed 's/-fstack-protector-strong//g')"
 if [ "$(uname)" == "Darwin" ]
 then
     MACH_INC="/usr/include/mach/"
-sed -i.bak -e \
-    "s@${MACH_INC}@${CONDA_BUILD_SYSROOT}/${MACH_INC}@g" \
-    "${SRC_DIR}/coregrind/Makefile.in"
+    sed -i.bak -e \
+        "s@${MACH_INC}@${CONDA_BUILD_SYSROOT}/${MACH_INC}@g" \
+        "${SRC_DIR}/coregrind/Makefile.in"
 fi
 
 ./configure --prefix=${PREFIX} --disable-dependency-tracking --enable-only64bit
