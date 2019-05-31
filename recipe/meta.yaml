@@ -22,15 +22,12 @@ requirements:
     - {{ compiler("cxx") }}
     - pkg-config
     - perl
-    - boost-cpp
   host:
     - zlib
   run:
     - zlib
 
 test:
-  requires:
-    - boost-cpp
   commands:
     - valgrind --help
     - valgrind ls -l
