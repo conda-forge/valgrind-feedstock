@@ -1,0 +1,19 @@
+boost_cpp:
+- 1.70.0
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- vs2015
+perl:
+- '5.26'
+pin_run_as_build:
+  boost-cpp:
+    max_pin: x.x.x
+  perl:
+    max_pin: x.x.x
+  zlib:
+    max_pin: x.x
+zlib:
+- '1.2'
