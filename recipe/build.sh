@@ -18,4 +18,5 @@ fi
 ./configure --prefix=${PREFIX} --disable-dependency-tracking --enable-only64bit
 
 make
+make check
 make install
