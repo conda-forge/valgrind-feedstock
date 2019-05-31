@@ -10,10 +10,12 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: ftp://sourceware.org/pub/{{ name }}/{{ name }}-{{ version }}.tar.bz2
   sha256: {{ sha256 }}
+  patches:  # [osx]
+    - 0001-added-mach_voucher_types-include.patch  # [osx]
 
 build:
   number: 0
-  skip: True  # [not linux]
+  skip: True  # [not win]
 
 requirements:
   build:
