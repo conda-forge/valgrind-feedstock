@@ -13,19 +13,12 @@ then
     sed -i.bak -e \
         "s@${MACH_INC}@${CONDA_BUILD_SYSROOT}${MACH_INC}@g" \
         "${SRC_DIR}/coregrind/Makefile.in"
-    export CFLAGS="${CFLAGS} -undefined dynamic_lookup"
-    export CXXFLAGS="${CXXFLAGS} -undefined dynamic_lookup"
+    export LDFLAGS="${LDFLAGS} -undefined dynamic_lookup"
 fi
+
+./autogen.sh
 
 ./configure --prefix=${PREFIX} --disable-dependency-tracking --enable-only64bit
-
-if [ "$(uname)" == "Darwin" ]
-then
-    # Valgrind's configure.ac parses uname -r to find out the Darwin version.
-    # However, that might not be the one for which we are building.
-    echo "#undef DARWIN_VERS" >> config.h
-    echo "#define DARWIN_VERS DARWIN_${MACOSX_DEPLOYMENT_TARGET/./_}" >> config.h
-fi
 
 make
 #make check
