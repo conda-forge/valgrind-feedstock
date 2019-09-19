@@ -1,0 +1,33 @@
+From 05484ea2c04e6c7cdf6089f1df005bbc645785af Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Julian=20R=C3=BCth?= <julian.rueth@fsfe.org>
+Date: Thu, 19 Sep 2019 20:57:47 +0200
+Subject: [PATCH] set osx version through our CFLAGS
+
+---
+ Makefile.all.am | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/Makefile.all.am b/Makefile.all.am
+index 3786e34..b42f519 100644
+--- a/Makefile.all.am
++++ b/Makefile.all.am
+@@ -222,15 +222,13 @@ AM_CCASFLAGS_ARM64_LINUX  = @FLAG_M64@ -g
+ 
+ AM_FLAG_M3264_X86_DARWIN = -arch i386
+ AM_CFLAGS_X86_DARWIN     = $(WERROR) -arch i386 $(AM_CFLAGS_BASE) \
+-				-mmacosx-version-min=10.6 \
+ 				-fno-pic -fno-PIC
+ 
+ AM_CFLAGS_PSO_X86_DARWIN = $(AM_CFLAGS_X86_DARWIN) $(AM_CFLAGS_PSO_BASE)
+ AM_CCASFLAGS_X86_DARWIN  = -arch i386 -g
+ 
+ AM_FLAG_M3264_AMD64_DARWIN = -arch x86_64
+-AM_CFLAGS_AMD64_DARWIN     = $(WERROR) -arch x86_64 $(AM_CFLAGS_BASE) \
+-			    -mmacosx-version-min=10.6
++AM_CFLAGS_AMD64_DARWIN     = $(WERROR) -arch x86_64 $(AM_CFLAGS_BASE)
+ AM_CFLAGS_PSO_AMD64_DARWIN = $(AM_CFLAGS_AMD64_DARWIN) $(AM_CFLAGS_PSO_BASE)
+ AM_CCASFLAGS_AMD64_DARWIN  = -arch x86_64 -g
+ 
+-- 
+2.23.0
+

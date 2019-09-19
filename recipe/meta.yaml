@@ -12,6 +12,7 @@ source:
   sha256: {{ sha256 }}
   patches:
     - 0001-Make-configure.ac-aware-of-conda-s-macOS-deployment-.patch
+    - 0002-set-osx-version-through-our-CFLAGS.patch
 
 build:
   number: 1
