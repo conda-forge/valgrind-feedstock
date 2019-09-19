@@ -13,7 +13,8 @@ then
     sed -i.bak -e \
         "s@${MACH_INC}@${CONDA_BUILD_SYSROOT}${MACH_INC}@g" \
         "${SRC_DIR}/coregrind/Makefile.in"
-    export LDFLAGS="${LDFLAGS} -undefined dynamic_lookup"
+    export CFLAGS="${CFLAGS} -undefined dynamic_lookup"
+    export CXXFLAGS="${CXXFLAGS} -undefined dynamic_lookup"
 fi
 
 ./autogen.sh
