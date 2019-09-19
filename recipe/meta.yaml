@@ -14,8 +14,8 @@ source:
     - 0001-added-mach_voucher_types-include.patch  # [osx]
 
 build:
-  number: 0
-  skip: True  # [not linux]
+  number: 1
+  skip: True  # [win]
 
 requirements:
   build:
@@ -55,3 +55,4 @@ extra:
     - jakirkham
     - notestaff
     - scopatz
+    - saraedum
