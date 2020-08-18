@@ -9,11 +9,13 @@ cxx_compiler_version:
 docker_image:
 - condaforge/linux-anvil-comp7
 perl:
-- '5.26'
+- 5.26.2
 pin_run_as_build:
   perl:
     max_pin: x.x.x
   zlib:
     max_pin: x.x
+target_platform:
+- linux-64
 zlib:
 - '1.2'
