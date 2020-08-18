@@ -34,7 +34,7 @@ test:
 
 about:
   home: http://valgrind.org
-  license: GPLv2
+  license: GPL-2
   license_family: GPL
   license_file: COPYING
   summary: 'A tool for detecting memory errors, and an instrumentation framework for building dynamic analysis tools.'
