@@ -1,0 +1,83 @@
+From 3c390bad8bc83ad22b59b3209c1956a654b70648 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Julian=20R=C3=BCth?= <julian.rueth@fsfe.org>
+Date: Thu, 19 Sep 2019 17:20:56 +0200
+Subject: [PATCH] Make configure.ac aware of conda's macOS deployment target
+
+---
+ configure.ac | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index f8c798b..d514f1c 100755
+--- a/configure.ac
++++ b/configure.ac
+@@ -388,56 +388,56 @@ case "${host_os}" in
+         # time support for 10.5 (the 9.* pattern just below), I'll leave it
+         # in for now, just in case anybody wants to give it a try.  But I'm
+         # assuming that 3.7.0 is a Snow Leopard and Lion-only release.
+-	case "${kernel}" in
+-	     9.*)
++	case "${MACOSX_DEPLOYMENT_TARGET}" in
++	     10.5)
+ 		  AC_MSG_RESULT([Darwin 9.x (${kernel}) / Mac OS X 10.5 Leopard])
+ 		  AC_DEFINE([DARWIN_VERS], DARWIN_10_5, [Darwin / Mac OS X version])
+ 		  DEFAULT_SUPP="darwin9.supp ${DEFAULT_SUPP}"
+ 		  DEFAULT_SUPP="darwin9-drd.supp ${DEFAULT_SUPP}"
+ 		  ;;
+-	     10.*)
++	     10.6)
+ 		  AC_MSG_RESULT([Darwin 10.x (${kernel}) / Mac OS X 10.6 Snow Leopard])
+ 		  AC_DEFINE([DARWIN_VERS], DARWIN_10_6, [Darwin / Mac OS X version])
+ 		  DEFAULT_SUPP="darwin10.supp ${DEFAULT_SUPP}"
+ 		  DEFAULT_SUPP="darwin10-drd.supp ${DEFAULT_SUPP}"
+ 		  ;;
+-	     11.*)
++	     10.7)
+ 		  AC_MSG_RESULT([Darwin 11.x (${kernel}) / Mac OS X 10.7 Lion])
+ 		  AC_DEFINE([DARWIN_VERS], DARWIN_10_7, [Darwin / Mac OS X version])
+ 		  DEFAULT_SUPP="darwin11.supp ${DEFAULT_SUPP}"
+ 		  DEFAULT_SUPP="darwin10-drd.supp ${DEFAULT_SUPP}"
+ 		  ;;
+-	     12.*)
++	     10.8)
+ 		  AC_MSG_RESULT([Darwin 12.x (${kernel}) / Mac OS X 10.8 Mountain Lion])
+ 		  AC_DEFINE([DARWIN_VERS], DARWIN_10_8, [Darwin / Mac OS X version])
+ 		  DEFAULT_SUPP="darwin12.supp ${DEFAULT_SUPP}"
+ 		  DEFAULT_SUPP="darwin10-drd.supp ${DEFAULT_SUPP}"
+ 		  ;;
+-	     13.*)
++	     10.9)
+ 		  AC_MSG_RESULT([Darwin 13.x (${kernel}) / Mac OS X 10.9 Mavericks])
+ 		  AC_DEFINE([DARWIN_VERS], DARWIN_10_9, [Darwin / Mac OS X version])
+ 		  DEFAULT_SUPP="darwin13.supp ${DEFAULT_SUPP}"
+ 		  DEFAULT_SUPP="darwin10-drd.supp ${DEFAULT_SUPP}"
+ 		  ;;
+-	     14.*)
++	     10.10)
+ 		  AC_MSG_RESULT([Darwin 14.x (${kernel}) / Mac OS X 10.10 Yosemite])
+ 		  AC_DEFINE([DARWIN_VERS], DARWIN_10_10, [Darwin / Mac OS X version])
+ 		  DEFAULT_SUPP="darwin14.supp ${DEFAULT_SUPP}"
+ 		  DEFAULT_SUPP="darwin10-drd.supp ${DEFAULT_SUPP}"
+ 		  ;;
+-	     15.*)
++	     10.11)
+ 		  AC_MSG_RESULT([Darwin 15.x (${kernel}) / Mac OS X 10.11 El Capitan])
+ 		  AC_DEFINE([DARWIN_VERS], DARWIN_10_11, [Darwin / Mac OS X version])
+ 		  DEFAULT_SUPP="darwin15.supp ${DEFAULT_SUPP}"
+ 		  DEFAULT_SUPP="darwin10-drd.supp ${DEFAULT_SUPP}"
+ 		  ;;
+-	     16.*)
++	     10.12)
+ 		  AC_MSG_RESULT([Darwin 16.x (${kernel}) / macOS 10.12 Sierra])
+ 		  AC_DEFINE([DARWIN_VERS], DARWIN_10_12, [Darwin / Mac OS X version])
+ 		  DEFAULT_SUPP="darwin16.supp ${DEFAULT_SUPP}"
+ 		  DEFAULT_SUPP="darwin10-drd.supp ${DEFAULT_SUPP}"
+ 		  ;;
+-	     17.*)
++	     10.13)
+ 		  AC_MSG_RESULT([Darwin 17.x (${kernel}) / macOS 10.13 High Sierra])
+ 		  AC_DEFINE([DARWIN_VERS], DARWIN_10_13, [Darwin / Mac OS X version])
+ 		  DEFAULT_SUPP="darwin17.supp ${DEFAULT_SUPP}"
+-- 
+2.23.0
+

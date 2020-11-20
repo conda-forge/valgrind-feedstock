@@ -10,18 +10,22 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: ftp://sourceware.org/pub/{{ name }}/{{ name }}-{{ version }}.tar.bz2
   sha256: {{ sha256 }}
-  patches:  # [osx]
-    - 0001-added-mach_voucher_types-include.patch  # [osx]
+  patches:
+    - 0001-Make-configure.ac-aware-of-conda-s-macOS-deployment-.patch
+    - 0002-set-osx-version-through-our-CFLAGS.patch
+    - 0003-search-for-kernel-defs-in-our-sysroot.patch
 
 build:
-  number: 0
-  skip: True  # [not linux]
+  number: 1
+  skip: True  # [win]
 
 requirements:
   build:
     - {{ compiler("cxx") }}
     - pkg-config
     - perl
+    - autoconf
+    - automake
   host:
     - zlib
   run:
@@ -55,3 +59,4 @@ extra:
     - jakirkham
     - notestaff
     - scopatz
+    - saraedum

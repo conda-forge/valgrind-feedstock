@@ -1,0 +1,31 @@
+From 7365d005d0d1f44522822cd73a217b63061c71e6 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Julian=20R=C3=BCth?= <julian.rueth@fsfe.org>
+Date: Thu, 19 Sep 2019 21:13:55 +0200
+Subject: [PATCH] search for kernel defs in our sysroot
+
+---
+ coregrind/Makefile.am | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/coregrind/Makefile.am b/coregrind/Makefile.am
+index 94030fd..4df77ca 100644
+--- a/coregrind/Makefile.am
++++ b/coregrind/Makefile.am
+@@ -157,10 +157,10 @@ mach_hdrs += \
+         m_mach/thread_act.h \
+         m_mach/vm_map.h
+ mach_defs += \
+-	/usr/include/mach/mach_vm.defs \
+-        /usr/include/mach/task.defs \
+-        /usr/include/mach/thread_act.defs \
+-        /usr/include/mach/vm_map.defs
++	${CONDA_BUILD_SYSROOT}/usr/include/mach/mach_vm.defs \
++        ${CONDA_BUILD_SYSROOT}/usr/include/mach/task.defs \
++        ${CONDA_BUILD_SYSROOT}/usr/include/mach/thread_act.defs \
++        ${CONDA_BUILD_SYSROOT}/usr/include/mach/vm_map.defs
+ endif
+ 
+ # Be careful w.r.t. parallel builds.  See section 27.9 of the automake info
+-- 
+2.23.0
+
