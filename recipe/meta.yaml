@@ -1,6 +1,6 @@
 {% set name = "valgrind" %}
-{% set version = "3.16.1" %}
-{% set md5 = "d1b153f1ab17cf1f311705e7a83ef589" %}
+{% set version = "3.17.0" %}
+{% set sha256 = "ad3aec668e813e40f238995f60796d9590eee64a16dff88421430630e69285a2" %}
 
 package:
   name: {{ name|lower }}
@@ -8,8 +8,8 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: ftp://sourceware.org/pub/{{ name }}/{{ name }}-{{ version }}.tar.bz2
-  md5: {{ md5 }}
+  url: https://sourceware.org/pub/{{ name }}/{{ name }}-{{ version }}.tar.bz2
+  sha256: {{ sha256 }}
   patches:  # [osx]
     - 0001-added-mach_voucher_types-include.patch  # [osx]
 
@@ -55,3 +55,4 @@ extra:
     - jakirkham
     - notestaff
     - scopatz
+    - saraedum
