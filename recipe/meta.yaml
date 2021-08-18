@@ -13,7 +13,6 @@ source:
   patches:
     - 0001-Make-configure.ac-aware-of-conda-s-macOS-deployment-.patch
     - 0002-set-osx-version-through-our-CFLAGS.patch
-    - 0003-search-for-kernel-defs-in-our-sysroot.patch
 
 build:
   number: 1
