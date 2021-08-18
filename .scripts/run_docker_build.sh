@@ -64,11 +64,6 @@ mkdir -p "$ARTIFACTS"
 DONE_CANARY="$ARTIFACTS/conda-forge-build-done-${CONFIG}"
 rm -f "$DONE_CANARY"
 
-<<<<<<< HEAD:.azure-pipelines/run_docker_build.sh
-if [ -z "${CI}" ]; then
-    DOCKER_RUN_ARGS="-it "
-fi
-=======
 # Allow people to specify extra default arguments to `docker run` (e.g. `--rm`)
 DOCKER_RUN_ARGS="${CONDA_FORGE_DOCKER_RUN_ARGS}"
 if [ -z "${CI}" ]; then
@@ -78,7 +73,6 @@ fi
 ( endgroup "Configure Docker" ) 2> /dev/null
 
 ( startgroup "Start Docker" ) 2> /dev/null
->>>>>>> origin/master:.scripts/run_docker_build.sh
 
 export UPLOAD_PACKAGES="${UPLOAD_PACKAGES:-True}"
 docker run ${DOCKER_RUN_ARGS} \
@@ -90,8 +84,6 @@ docker run ${DOCKER_RUN_ARGS} \
            -e GIT_BRANCH \
            -e UPLOAD_ON_BRANCH \
            -e CI \
-<<<<<<< HEAD:.azure-pipelines/run_docker_build.sh
-=======
            -e FEEDSTOCK_NAME \
            -e CPU_COUNT \
            -e BUILD_WITH_CONDA_DEBUG \
@@ -99,7 +91,6 @@ docker run ${DOCKER_RUN_ARGS} \
            -e BINSTAR_TOKEN \
            -e FEEDSTOCK_TOKEN \
            -e STAGING_BINSTAR_TOKEN \
->>>>>>> origin/master:.scripts/run_docker_build.sh
            $DOCKER_IMAGE \
            bash \
            /home/conda/feedstock_root/${PROVIDER_DIR}/build_steps.sh
