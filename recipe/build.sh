@@ -7,7 +7,7 @@ export CFLAGS="$(echo "${CFLAGS}" | sed 's/-fstack-protector-strong//g')"
 export CXXFLAGS="$(echo "${CXXFLAGS}" | sed 's/-fstack-protector-strong//g')"
 
 ./autogen.sh
-./configure --prefix=${PREFIX} --disable-dependency-tracking --enable-only64bit
+./configure --prefix=${PREFIX} --disable-dependency-tracking --enable-only64bit --without-mpicc
 
 make
 #make check
