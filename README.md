@@ -1,11 +1,11 @@
-About valgrind
-==============
+About valgrind-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/valgrind-feedstock/blob/main/LICENSE.txt)
 
 Home: http://valgrind.org
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/valgrind-feedstock/blob/main/LICENSE.txt)
 
 Summary: A tool for detecting memory errors, and an instrumentation framework for building dynamic analysis tools.
 
@@ -43,7 +43,7 @@ Current build status
               <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2119&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/valgrind-feedstock?branchName=main&jobName=linux&configuration=linux_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/valgrind-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
                 </a>
               </td>
             </tr>
