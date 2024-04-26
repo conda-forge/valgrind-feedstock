@@ -1,6 +1,6 @@
 {% set name = "valgrind" %}
-{% set version = "3.22.0" %}
-{% set sha256 = "c811db5add2c5f729944caf47c4e7a65dcaabb9461e472b578765dd7bf6d2d4c" %}
+{% set version = "3.23.0" %}
+{% set sha256 = "c5c34a3380457b9b75606df890102e7df2c702b9420c2ebef9540f8b5d56264d" %}
 
 package:
   name: {{ name|lower }}
@@ -14,12 +14,13 @@ source:
     - 0001-added-mach_voucher_types-include.patch  # [osx]
 
 build:
-  number: 1
+  number: 0
   skip: true  # [not linux]
 
 requirements:
   build:
     - {{ compiler("cxx") }}
+    - {{ stdlib("c") }}
     - make
     - pkg-config
     - perl
