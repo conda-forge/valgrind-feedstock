@@ -17,6 +17,9 @@ fi
 
 ./configure --prefix=${PREFIX} --disable-dependency-tracking --enable-only64bit
 
+ls -l coregrind
+cat coregrind/link_tool_exe_linux
+
 make
 #make check
 make install
