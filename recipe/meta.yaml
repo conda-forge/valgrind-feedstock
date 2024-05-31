@@ -28,11 +28,15 @@ requirements:
     - zlib
   run:
     - zlib
+    # utilities such as ms_print, cg_annotate, cg_diff require perl
+    - perl
 
 test:
   commands:
     - valgrind --help
     - valgrind ls -l
+    # Verify that #10 has been resolved
+    - ms_print
 
 about:
   home: http://valgrind.org
