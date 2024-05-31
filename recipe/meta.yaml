@@ -32,11 +32,13 @@ requirements:
     - perl
 
 test:
+  files:
+    - massif.out
   commands:
     - valgrind --help
     - valgrind ls -l
     # Verify that #10 has been resolved
-    - ms_print
+    - ms_print massif.out
 
 about:
   home: http://valgrind.org
