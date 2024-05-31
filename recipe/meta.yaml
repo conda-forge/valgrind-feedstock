@@ -26,6 +26,7 @@ requirements:
     - perl
   host:
     - zlib
+    - perl
   run:
     - zlib
     # utilities such as ms_print, cg_annotate, cg_diff require perl
