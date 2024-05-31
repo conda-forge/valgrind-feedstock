@@ -1,0 +1,33 @@
+From a44d26ef887ef555226840c94e791e0cfd1f51b1 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Julian=20R=C3=BCth?= <julian.rueth@fsfe.org>
+Date: Fri, 31 May 2024 18:01:35 +0300
+Subject: [PATCH] Do not use build-time perl for installed helper scripts
+
+---
+ massif/ms_print.in | 2 +-
+ perf/vg_perf.in    | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/massif/ms_print.in b/massif/ms_print.in
+index a206ce4..71e5c3d 100755
+--- a/massif/ms_print.in
++++ b/massif/ms_print.in
+@@ -1,4 +1,4 @@
+-#! @PERL@
++#! /usr/bin/env perl
+ 
+ ##--------------------------------------------------------------------##
+ ##--- Massif's results printer                         ms_print.in ---##
+diff --git a/perf/vg_perf.in b/perf/vg_perf.in
+index 90ee1d2..87662a7 100644
+--- a/perf/vg_perf.in
++++ b/perf/vg_perf.in
+@@ -1,4 +1,4 @@
+-#! @PERL@
++#! /usr/bin/env perl
+ ##--------------------------------------------------------------------##
+ ##--- Valgrind performance testing script                  vg_perf ---##
+ ##--------------------------------------------------------------------##
+-- 
+2.45.1
+

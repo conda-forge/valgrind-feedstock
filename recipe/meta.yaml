@@ -10,7 +10,8 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://sourceware.org/pub/{{ name }}/{{ name }}-{{ version }}.tar.bz2
   sha256: {{ sha256 }}
-  patches:   # [osx]
+  patches:
+    - 0001-Do-not-use-build-time-perl-for-installed-helper-scri.patch
     - 0001-added-mach_voucher_types-include.patch  # [osx]
 
 build:
@@ -26,13 +27,14 @@ requirements:
     - perl
   host:
     - zlib
-    - perl
   run:
     - zlib
-    # utilities such as ms_print, cg_annotate, cg_diff require perl
-    - perl
+    # utilities such as ms_print, cg_annotate, cg_diff require perl or python.
+    # valgrind users wanting to use them need to install perl/python explicitly.
 
 test:
+  requires:
+    - perl
   files:
     - massif.out
   commands:
