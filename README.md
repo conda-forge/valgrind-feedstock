@@ -193,4 +193,5 @@ Feedstock Maintainers
 * [@notestaff](https://github.com/notestaff/)
 * [@saraedum](https://github.com/saraedum/)
 * [@scopatz](https://github.com/scopatz/)
+* [@xhochy](https://github.com/xhochy/)
 
