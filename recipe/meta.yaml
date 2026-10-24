@@ -1,6 +1,6 @@
 {% set name = "valgrind" %}
-{% set version = "3.27.1" %}
-{% set sha256 = "5d589152eb8071c02feab8ce6ab719e431a1fbc3e2b1700f5432632a8b9264dc" %}
+{% set version = "3.28.0" %}
+{% set sha256 = "9f7a18d128f05d3a80fea53e6953f34aad7200a425ceaee46099a8a798a7dd9c" %}
 
 package:
   name: {{ name|lower }}
