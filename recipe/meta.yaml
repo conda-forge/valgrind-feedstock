@@ -13,6 +13,7 @@ source:
   patches:
     - 0001-Do-not-use-build-time-perl-for-installed-helper-scri.patch
     - 0001-added-mach_voucher_types-include.patch  # [osx]
+    - 0002-Assume-no-ARM-test-features-when-cross-compiling.patch  # [build_platform != target_platform]
 
 build:
   number: 0
@@ -22,6 +23,8 @@ requirements:
   build:
     - {{ compiler("cxx") }}
     - {{ stdlib("c") }}
+    - autoconf
+    - automake
     - make
     - pkg-config
     - perl

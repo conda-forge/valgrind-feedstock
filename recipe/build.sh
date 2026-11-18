@@ -6,6 +6,8 @@ set -e -o pipefail
 export CFLAGS="$(echo "${CFLAGS}" | sed 's/-fstack-protector-strong//g')"
 export CXXFLAGS="$(echo "${CXXFLAGS}" | sed 's/-fstack-protector-strong//g')"
 
+autoreconf -ivf
+
 # Patch Valgrind to use the macOS SDK for mach headers.
 if [ "$(uname)" == "Darwin" ]
 then
